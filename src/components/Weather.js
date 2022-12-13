@@ -25,14 +25,15 @@ function Weather(props){
         const res = await fetch(url);
         if (res.ok) {
           const weather = await res.json();
-          setWeather({ weather });
+          setWeather(weather);
+          console.log(weather)
         }
         else {
           alert ("Check Weather API key!")
         }
       }
 
-      // const weather = this.state.weather;
+      // const newWeather = weather;
       let content = <div className='loading'>loading weather...</div>;
 
       if (weather) {
